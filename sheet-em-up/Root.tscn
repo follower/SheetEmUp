@@ -76,7 +76,7 @@ loop = true
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("PropertyPowerUp/CollisionShape2D/ColorRect:color")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -84,7 +84,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 0.184314, 0.592157, 0.737255, 1 ), Color( 0.376892, 0.64633, 0.742188, 1 ) ]
+"values": [ Color( 0.171753, 0.529113, 0.65625, 1 ), Color( 0.376892, 0.64633, 0.742188, 1 ) ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -378,7 +378,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 0.234213, 0.606194, 0.738533, 1 )
+color = Color( 0.171753, 0.529113, 0.65625, 1 )
 _sections_unfolded = [ "Rect" ]
 
 [node name="PowerUpColourAnim" type="AnimationPlayer" parent="Playfield" index="6"]
