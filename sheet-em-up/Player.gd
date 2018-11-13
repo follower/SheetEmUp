@@ -99,3 +99,6 @@ func add_to_inventory(new_item):
 		PROPERTY_POWERUP:
 			$"../../SpreadsheetContainer/GridContainer/PropertyOptionButton".add_item(new_item.get_powerup_value_as_text())
 
+		OPERATOR_POWERUP:
+			$"../../SpreadsheetContainer/GridContainer/OperatorOptionButton".add_item(new_item.get_powerup_value_as_text())
+
