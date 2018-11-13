@@ -43,5 +43,7 @@ func get_powerup_value_as_text():
 	match self.get_powerup_value():
 		"JY":
 			result = "Jump Y"
+		_:
+			result = self.get_powerup_value()
 
 	return result
