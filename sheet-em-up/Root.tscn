@@ -276,6 +276,16 @@ color = Color( 0.519531, 0.401825, 0.401825, 1 )
 
 [node name="PropertyPowerUp" parent="Playfield" index="5" instance=ExtResource( 2 )]
 
+[node name="OperatorPowerUp" parent="Playfield" index="6" instance=ExtResource( 2 )]
+
+position = Vector2( 782, 429.38 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+powerup_type = 1
+
+[node name="Label" parent="Playfield/OperatorPowerUp/CollisionShape2D/ColorRect" index="0"]
+
+text = "*"
+
 [node name="SpreadsheetContainer" type="Container" parent="." index="1"]
 
 anchor_left = 0.0
@@ -408,3 +418,4 @@ selected = -1
 script = ExtResource( 5 )
 
 
+[editable path="Playfield/OperatorPowerUp"]
