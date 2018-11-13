@@ -25,6 +25,7 @@ func _on_PropertyPowerUp_body_entered(body):
 	#printt(body)
 	if self.visible:
 		$"PowerUpPickUpAnim".play("PowerUp")
+		body.add_to_inventory(self)
 
 
 func _on_PowerUpPickUpAnim_animation_finished(anim_name):

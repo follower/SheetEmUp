@@ -89,3 +89,13 @@ func _on_PropertyPowerUp_body_entered(body):
 	printt("woo")
 	printt(body)
 
+
+# TODO: Don't duplicate this?
+enum PowerUpType {PROPERTY_POWERUP, OPERATOR_POWERUP, VALUE_POWERUP}
+
+func add_to_inventory(new_item):
+
+	match new_item.powerup_type:
+		PROPERTY_POWERUP:
+			$"../../SpreadsheetContainer/GridContainer/PropertyOptionButton".add_item(new_item.get_powerup_value_as_text())
+
