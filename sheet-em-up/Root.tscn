@@ -356,6 +356,7 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 2 )
 _sections_unfolded = [ "Visibility" ]
+powerup_type = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/PropertyPowerUp" index="0"]
 

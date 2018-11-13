@@ -1,5 +1,10 @@
 extends Area2D
 
+enum PowerUpType {PROPERTY_POWERUP, OPERATOR_POWERUP, VALUE_POWERUP}
+
+export (PowerUpType) var powerup_type = PROPERTY_POWERUP
+
+
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
@@ -24,3 +29,18 @@ func _on_PropertyPowerUp_body_entered(body):
 
 func _on_PowerUpPickUpAnim_animation_finished(anim_name):
 	self.visible = false
+
+
+# TODO: Handle all this properly...
+
+func get_powerup_value():
+	return $"CollisionShape2D/ColorRect/Label".text
+
+func get_powerup_value_as_text():
+	var result
+
+	match self.get_powerup_value():
+		"JY":
+			result = "Jump Y"
+
+	return result
