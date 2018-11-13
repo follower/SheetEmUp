@@ -2,10 +2,10 @@
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://PropertyPowerUp.gd" type="Script" id=2]
-[ext_resource path="res://PropertyOptionButton.gd" type="Script" id=3]
-[ext_resource path="res://OperatorOptionButton.gd" type="Script" id=4]
-[ext_resource path="res://ValueOptionButton.gd" type="Script" id=5]
-[ext_resource path="res://sound/sheet-em-up-power-up.wav" type="AudioStream" id=6]
+[ext_resource path="res://sound/sheet-em-up-power-up.wav" type="AudioStream" id=3]
+[ext_resource path="res://PropertyOptionButton.gd" type="Script" id=4]
+[ext_resource path="res://OperatorOptionButton.gd" type="Script" id=5]
+[ext_resource path="res://ValueOptionButton.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -75,7 +75,7 @@ length = 2.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("PropertyPowerUp/CollisionShape2D/ColorRect:color")
+tracks/0/path = NodePath("CollisionShape2D/ColorRect:color")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -94,7 +94,7 @@ length = 0.5
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("PropertyPowerUp/CollisionShape2D/ColorRect:rect_size")
+tracks/0/path = NodePath("CollisionShape2D/ColorRect:rect_size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/imported = false
@@ -106,7 +106,7 @@ tracks/0/keys = {
 "values": [ Vector2( 32, 30 ), Vector2( 55, 52 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("PropertyPowerUp/CollisionShape2D/ColorRect:rect_position")
+tracks/1/path = NodePath("CollisionShape2D/ColorRect:rect_position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = false
 tracks/1/imported = false
@@ -118,7 +118,7 @@ tracks/1/keys = {
 "values": [ Vector2( -15, -14 ), Vector2( -27, -25 ) ]
 }
 tracks/2/type = "method"
-tracks/2/path = NodePath("../AudioStreamPlayer")
+tracks/2/path = NodePath("AudioStreamPlayer")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -346,7 +346,6 @@ color = Color( 0.519531, 0.401825, 0.401825, 1 )
 
 [node name="PropertyPowerUp" type="Area2D" parent="Playfield" index="5"]
 
-editor/display_folded = true
 position = Vector2( 712.418, 429.38 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -381,7 +380,28 @@ size_flags_vertical = 1
 color = Color( 0.171753, 0.529113, 0.65625, 1 )
 _sections_unfolded = [ "Rect" ]
 
-[node name="PowerUpColourAnim" type="AnimationPlayer" parent="Playfield" index="6"]
+[node name="Label" type="Label" parent="Playfield/PropertyPowerUp/CollisionShape2D/ColorRect" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 32.0
+margin_bottom = 30.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "JY"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="PowerUpColourAnim" type="AnimationPlayer" parent="Playfield/PropertyPowerUp" index="1"]
 
 root_node = NodePath("..")
 autoplay = "PowerUp"
@@ -392,7 +412,16 @@ anims/PowerUp = SubResource( 8 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="PowerUpPickUpAnim" type="AnimationPlayer" parent="Playfield" index="7"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Playfield/PropertyPowerUp" index="2"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "FX"
+
+[node name="PowerUpPickUpAnim" type="AnimationPlayer" parent="Playfield/PropertyPowerUp" index="3"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -405,7 +434,6 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="SpreadsheetContainer" type="Container" parent="." index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -479,7 +507,7 @@ flat = false
 align = 0
 items = [  ]
 selected = -1
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 
 [node name="OperatorOptionButton" type="OptionButton" parent="SpreadsheetContainer/GridContainer" index="1"]
 
@@ -506,7 +534,7 @@ flat = false
 align = 0
 items = [  ]
 selected = -1
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 
 [node name="ValueOptionButton" type="OptionButton" parent="SpreadsheetContainer/GridContainer" index="2"]
 
@@ -533,19 +561,10 @@ flat = false
 align = 0
 items = [  ]
 selected = -1
-script = ExtResource( 5 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
-
-stream = ExtResource( 6 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "FX"
+script = ExtResource( 6 )
 
 [connection signal="body_entered" from="Playfield/PropertyPowerUp" to="Playfield/PropertyPowerUp" method="_on_PropertyPowerUp_body_entered"]
 
-[connection signal="animation_finished" from="Playfield/PowerUpPickUpAnim" to="Playfield/PropertyPowerUp" method="_on_PowerUpPickUpAnim_animation_finished"]
+[connection signal="animation_finished" from="Playfield/PropertyPowerUp/PowerUpPickUpAnim" to="Playfield/PropertyPowerUp" method="_on_PowerUpPickUpAnim_animation_finished"]
 
 

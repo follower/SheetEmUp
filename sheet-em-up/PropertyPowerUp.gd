@@ -19,7 +19,7 @@ func _on_PropertyPowerUp_body_entered(body):
 	#printt("foo")
 	#printt(body)
 	if self.visible:
-		$"../PowerUpPickUpAnim".play("PowerUp")
+		$"PowerUpPickUpAnim".play("PowerUp")
 
 
 func _on_PowerUpPickUpAnim_animation_finished(anim_name):
