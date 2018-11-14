@@ -7,9 +7,7 @@ extends OptionButton
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	add_item("")
-	add_item("1")
-	add_item("2")
+	pass
 
 
 #func _process(delta):
