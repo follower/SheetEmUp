@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://CollisionShape2D.gd" type="Script" id=2]
@@ -62,6 +62,11 @@ tracks/1/keys = {
 
 custom_solver_bias = 0.0
 extents = Vector2( 24.6076, 2.65692 )
+
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 7.50185, 224.906 )
 
 [node name="Root" type="Node" index="0"]
 
@@ -244,6 +249,7 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="Elevator" type="KinematicBody2D" parent="Playfield/AnimationPlayer" index="0"]
 
+editor/display_folded = true
 position = Vector2( 80.7861, 100.992 )
 input_pickable = false
 collision_layer = 1
@@ -299,6 +305,40 @@ powerup_type = 2
 [node name="Label" parent="Playfield/ValuePowerUp/CollisionShape2D/ColorRect" index="0"]
 
 text = "2"
+
+[node name="LeftScreenEdge" type="StaticBody2D" parent="Playfield" index="8"]
+
+position = Vector2( -8, 220 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/LeftScreenEdge" index="0"]
+
+shape = SubResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="RightScreenEdge" type="StaticBody2D" parent="Playfield" index="9"]
+
+position = Vector2( 1032, 220 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/RightScreenEdge" index="0"]
+
+shape = SubResource( 7 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="SpreadsheetContainer" type="Container" parent="." index="1"]
 
