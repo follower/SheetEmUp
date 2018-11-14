@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://PowerUp.tscn" type="PackedScene" id=2]
-[ext_resource path="res://PropertyOptionButton.gd" type="Script" id=3]
-[ext_resource path="res://OperatorOptionButton.gd" type="Script" id=4]
-[ext_resource path="res://ValueOptionButton.gd" type="Script" id=5]
+[ext_resource path="res://CollisionShape2D.gd" type="Script" id=2]
+[ext_resource path="res://PowerUp.tscn" type="PackedScene" id=3]
+[ext_resource path="res://PropertyOptionButton.gd" type="Script" id=4]
+[ext_resource path="res://OperatorOptionButton.gd" type="Script" id=5]
+[ext_resource path="res://ValueOptionButton.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -243,7 +244,6 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="Elevator" type="KinematicBody2D" parent="Playfield/AnimationPlayer" index="0"]
 
-editor/display_folded = true
 position = Vector2( 80.7861, 100.992 )
 input_pickable = false
 collision_layer = 1
@@ -254,6 +254,7 @@ _sections_unfolded = [ "collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/AnimationPlayer/Elevator" index="0"]
 
 shape = SubResource( 6 )
+script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="Playfield/AnimationPlayer/Elevator/CollisionShape2D" index="0"]
 
@@ -273,11 +274,11 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0.519531, 0.401825, 0.401825, 1 )
 
-[node name="PropertyPowerUp" parent="Playfield" index="5" instance=ExtResource( 2 )]
+[node name="PropertyPowerUp" parent="Playfield" index="5" instance=ExtResource( 3 )]
 
 position = Vector2( 278.418, 429.38 )
 
-[node name="OperatorPowerUp" parent="Playfield" index="6" instance=ExtResource( 2 )]
+[node name="OperatorPowerUp" parent="Playfield" index="6" instance=ExtResource( 3 )]
 
 editor/display_folded = true
 position = Vector2( 782, 429.38 )
@@ -288,7 +289,7 @@ powerup_type = 1
 
 text = "*"
 
-[node name="ValuePowerUp" parent="Playfield" index="7" instance=ExtResource( 2 )]
+[node name="ValuePowerUp" parent="Playfield" index="7" instance=ExtResource( 3 )]
 
 editor/display_folded = true
 position = Vector2( 950, 429.38 )
@@ -374,7 +375,7 @@ flat = false
 align = 0
 items = [  ]
 selected = -1
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 
 [node name="OperatorOptionButton" type="OptionButton" parent="SpreadsheetContainer/GridContainer" index="1"]
 
@@ -401,7 +402,7 @@ flat = false
 align = 0
 items = [  ]
 selected = -1
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 
 [node name="ValueOptionButton" type="OptionButton" parent="SpreadsheetContainer/GridContainer" index="2"]
 
@@ -428,7 +429,7 @@ flat = false
 align = 0
 items = [  ]
 selected = -1
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 
 
 [editable path="Playfield/OperatorPowerUp"]
