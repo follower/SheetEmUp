@@ -278,6 +278,7 @@ color = Color( 0.519531, 0.401825, 0.401825, 1 )
 
 [node name="OperatorPowerUp" parent="Playfield" index="6" instance=ExtResource( 2 )]
 
+editor/display_folded = true
 position = Vector2( 782, 429.38 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 powerup_type = 1
@@ -285,6 +286,17 @@ powerup_type = 1
 [node name="Label" parent="Playfield/OperatorPowerUp/CollisionShape2D/ColorRect" index="0"]
 
 text = "*"
+
+[node name="ValuePowerUp" parent="Playfield" index="7" instance=ExtResource( 2 )]
+
+editor/display_folded = true
+position = Vector2( 860, 429.38 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+powerup_type = 2
+
+[node name="Label" parent="Playfield/ValuePowerUp/CollisionShape2D/ColorRect" index="0"]
+
+text = "2"
 
 [node name="SpreadsheetContainer" type="Container" parent="." index="1"]
 
@@ -419,3 +431,4 @@ script = ExtResource( 5 )
 
 
 [editable path="Playfield/OperatorPowerUp"]
+[editable path="Playfield/ValuePowerUp"]
