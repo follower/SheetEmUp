@@ -134,6 +134,7 @@ _sections_unfolded = [ "Editor", "Limit", "Smoothing" ]
 
 [node name="TallObstacle" type="StaticBody2D" parent="Playfield" index="1"]
 
+editor/display_folded = true
 position = Vector2( 178.298, 435.514 )
 input_pickable = false
 collision_layer = 1
@@ -308,6 +309,7 @@ text = "2"
 
 [node name="LeftScreenEdge" type="StaticBody2D" parent="Playfield" index="8"]
 
+editor/display_folded = true
 position = Vector2( -8, 220 )
 input_pickable = false
 collision_layer = 1
@@ -325,6 +327,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="RightScreenEdge" type="StaticBody2D" parent="Playfield" index="9"]
 
+editor/display_folded = true
 position = Vector2( 1032, 220 )
 input_pickable = false
 collision_layer = 1
@@ -342,6 +345,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="SpreadsheetContainer" type="Container" parent="." index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
