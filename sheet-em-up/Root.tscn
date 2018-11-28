@@ -6,6 +6,7 @@
 [ext_resource path="res://PropertyOptionButton.gd" type="Script" id=4]
 [ext_resource path="res://OperatorOptionButton.gd" type="Script" id=5]
 [ext_resource path="res://ValueOptionButton.gd" type="Script" id=6]
+[ext_resource path="res://LevelCompleteDialog.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -499,6 +500,10 @@ window_title = "Level Complete!"
 resizable = false
 dialog_text = "Celly made it home!"
 dialog_hide_on_ok = true
+script = ExtResource( 9 )
+_sections_unfolded = [ "Dialog", "Pause", "Popup" ]
+
+[connection signal="confirmed" from="LevelCompleteDialog" to="LevelCompleteDialog" method="_on_LevelCompleteDialog_confirmed"]
 
 
 [editable path="Playfield/OperatorPowerUp"]
