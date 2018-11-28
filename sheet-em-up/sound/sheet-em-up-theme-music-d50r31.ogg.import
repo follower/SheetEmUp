@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sheet-em-up-theme-music-d50r31.ogg-0b9b5d0522714c52aac8159248580c66.oggstr"
+
+[deps]
+
+source_file="res://sound/sheet-em-up-theme-music-d50r31.ogg"
+dest_files=[ "res://.import/sheet-em-up-theme-music-d50r31.ogg-0b9b5d0522714c52aac8159248580c66.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

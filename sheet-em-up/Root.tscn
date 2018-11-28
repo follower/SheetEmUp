@@ -7,6 +7,7 @@
 [ext_resource path="res://PropertyOptionButton.gd" type="Script" id=5]
 [ext_resource path="res://OperatorOptionButton.gd" type="Script" id=6]
 [ext_resource path="res://ValueOptionButton.gd" type="Script" id=7]
+[ext_resource path="res://sound/sheet-em-up-theme-music-d50r31.ogg" type="AudioStream" id=8]
 [ext_resource path="res://LevelCompleteDialog.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -521,6 +522,15 @@ align = 0
 items = [  ]
 selected = -1
 script = ExtResource( 7 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 8 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Music"
 
 [node name="LevelCompleteDialog" type="ConfirmationDialog" parent="." index="3"]
 
