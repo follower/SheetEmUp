@@ -475,6 +475,31 @@ items = [  ]
 selected = -1
 script = ExtResource( 6 )
 
+[node name="LevelCompleteDialog" type="ConfirmationDialog" parent="." index="3"]
+
+pause_mode = 2
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -35.0
+margin_right = 100.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 200, 70 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+popup_exclusive = false
+window_title = "Level Complete!"
+resizable = false
+dialog_text = "Celly made it home!"
+dialog_hide_on_ok = true
+
 
 [editable path="Playfield/OperatorPowerUp"]
 [editable path="Playfield/ValuePowerUp"]
