@@ -14,7 +14,7 @@ config/name="Sheet 'em Up"
 run/main_scene="res://Root.tscn"
 boot_splash/image="res://graphics/sheet-em-up-title--02.png"
 boot_splash/fullsize=false
-config/icon="res://icon.png"
+config/icon="res://graphics/sheet-em-up-title--01--icon-edit.png"
 
 [rendering]
 
